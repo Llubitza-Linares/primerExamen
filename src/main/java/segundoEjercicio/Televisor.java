@@ -52,27 +52,35 @@ public class Televisor implements ITelevisor{
 
     }
 
-    public String getSistemaOperativo() {
-        return sistemaOperativo;
+    public String getPuertoUSB() {
+        return puertoUSB;
     }
-    public void setSistemaOperativo(String sistemaOperativo){
-        this.sistemaOperativo=sistemaOperativo;
+    public void setPuertoUSB(String puertoUSB){
+        this.puertoUSB=puertoUSB;
 
     }
 
-    public String getSistemaOperativo() {
-        return sistemaOperativo;
+    public String getControlRemoto() {
+        return controlRemoto;
     }
-    public void setSistemaOperativo(String sistemaOperativo){
-        this.sistemaOperativo=sistemaOperativo;
+    public void setControlRemoto(String controlRemoto){
+        this.controlRemoto=controlRemoto;
 
     }
 
-    public String getSistemaOperativo() {
-        return sistemaOperativo;
+    public String getBluetooth() {
+        return bluetooth;
     }
-    public void setSistemaOperativo(String sistemaOperativo){
-        this.sistemaOperativo=sistemaOperativo;
+    public void setBluetooth(String bluetooth){
+        this.bluetooth=bluetooth;
+
+    }
+
+    public String getSerialDelTelevisor() {
+        return serialDelTelevisor;
+    }
+    public void setSerialDelTelevisor(String serialDelTelevisor){
+        this.serialDelTelevisor=serialDelTelevisor;
 
     }
 
@@ -80,7 +88,33 @@ public class Televisor implements ITelevisor{
 
     @Override
     public Object clone() {
-        return null;
+
+       Televisor objClone = new Televisor();
+       objClone.setBluetooth(this.bluetooth);
+        objClone.setControlRemoto(this.controlRemoto);
+        objClone.setPuertoHdmi(this.puertoHdmi);
+        objClone.setPulgadas(this.pulgadas);
+        objClone.setResolucion(this.resolucion);
+        objClone.setPuertoUSB(this.puertoUSB);
+        objClone.setSerialDelTelevisor(this.serialDelTelevisor);
+        objClone.setVersionDelSO(this.versionDelSO);
+        objClone.setSistemaOperativo(this.sistemaOperativo);
+
+        return objClone;
+    }
+
+    public void showInformation(){
+       System.out.println("Sistema Operativo" +sistemaOperativo);
+        System.out.println("Version del Sistema" + versionDelSO);
+        System.out.println("Pulgadas" + pulgadas);
+        System.out.println("Resolucion" + resolucion);
+        System.out.println("PuertoHDMI" + puertoHdmi);
+        System.out.println("PuertoUsb" + puertoUSB);
+        System.out.println("Control Remoto" + controlRemoto);
+        System.out.println("Bluetooth" +bluetooth);
+        System.out.println("Serial del Televisor" + serialDelTelevisor);
+
+
     }
 
 }
